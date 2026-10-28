@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avatares animados</title>
+  <link rel="stylesheet" href="avatares.css">
+</head>
+<body>
+  <main>
+    <h1>Avatares de combate</h1>
+    <p class="instruccion">Elige una acción para animar a cada luchador.</p>
+    <section class="luchadores" aria-label="Avatares animados">
+      <article class="tarjeta">
+        <h2>León</h2>
+        <div class="escenario">
+          <div class="avatar leon" role="img" aria-label="Avatar de un león">
+            <div class="cola"></div>
+            <div class="melena"></div>
+            <div class="cuerpo"></div>
+            <div class="cabeza"><i class="oreja"></i><i class="ojo"></i><i class="hocico"></i></div>
+            <div class="pierna pierna-trasera"></div>
+            <div class="pierna pierna-delantera"></div>
+          </div>
+        </div>
+        <div class="controles" aria-label="Acciones del león">
+          <button data-accion="caminar">Caminar</button>
+          <button data-accion="atacar">Atacar</button>
+          <button data-accion="saltar">Saltar</button>
+          <button data-accion="agacharse">Agacharse</button>
+          <button data-accion="morir">Morir</button>
+        </div>
+      </article>
+      <article class="tarjeta">
+        <h2>Velocirraptor</h2>
+        <div class="escenario">
+          <div class="avatar raptor" role="img" aria-label="Avatar de un velocirraptor">
+            <div class="cola"></div>
+            <div class="cuerpo"></div>
+            <div class="cabeza"><i class="ojo"></i><i class="hocico"></i></div>
+            <div class="brazo"></div>
+            <div class="pierna pierna-trasera"></div>
+            <div class="pierna pierna-delantera"></div>
+          </div>
+        </div>
+        <div class="controles" aria-label="Acciones del velocirraptor">
+          <button data-accion="caminar">Caminar</button>
+          <button data-accion="atacar">Atacar</button>
+          <button data-accion="saltar">Saltar</button>
+          <button data-accion="agacharse">Agacharse</button>
+          <button data-accion="morir">Morir</button>
+        </div>
+      </article>
+    </section>
+  </main>
+  <script src="avatares.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="rgba(255, 200, 0, 0.84)">
+    <meta name="author" content="Diego Hernandez">
+    <title>Pelea de animales</title>
+         <link rel="stylesheet" href="style.css">
+       <link rel="shortcut icon" href="primer-icono.png" type="image/x-icon">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <header>
+    <img src="assets/segundo-icono.png" class="icono">
+        <h1 class="titulo">ANIMALS FIGHT</h1>
+        </header>
+
+          <div class="output" id="battle-1">
+            <img src="assets/tercer-icono.png" class="primer-pantalla">
+               <button class="boton boton-inicio" id="boton-star" type="button">Start -&gt;</button>
+               <p class="mensaje-star" id="star-1">Or press Enter key to start</p>
+          </div>
+
+    <div class="modos-pantalla" id="modos" style="display: none;">
+      <h2 class="modos-titulo">SELECT GAME MODE</h2>
+         <div class="modos-contenedor">
+             <button class="boton" id="btn-rapida" type="button">⚔️ QUICK FIGHT</button>
+             <br>
+          <button class="boton" id="btn-torneo" type="button">🏆 TOURNAMENT</button>
+   </div>
+</div>
+
+   <div class="modos seleccion-personaje" id="seleccionpj" style="display: none;">
+      <h2 class="modos-titulo">¡Elige tu personaje inicial!</h2>
+      <div class="personajes-columnas">
+        <article class="tarjeta-personaje">
+          <h3>León</h3>
+          <div class="escenario-personaje">
+            <div class="avatar-personaje avatar-leon" role="img" aria-label="León en movimiento">
+              <span class="cola"></span>
+              <span class="melena"></span>
+              <span class="cuerpo"></span>
+              <span class="cabeza">
+                <span class="oreja"></span>
+                <span class="ojo"></span>
+                <span class="hocico"></span>
+              </span>
+              <span class="pierna pierna-trasera"></span>
+              <span class="pierna pierna-delantera"></span>
+            </div>
+          </div>
+          <p class="descripcion-personaje">Fuerte y valiente. Mira cómo camina.</p>
+          <button class="boton boton-elegir" type="button" data-personaje="leon" aria-pressed="false">Elegir!</button>
+        </article>
+        <article class="tarjeta-personaje">
+          <h3>Velocirraptor</h3>
+          <div class="escenario-personaje">
+            <div class="avatar-personaje avatar-raptor" role="img" aria-label="Velocirraptor en movimiento">
+              <span class="cola"></span>
+              <span class="cuerpo"></span>
+              <span class="cabeza">
+                <span class="ojo"></span>
+                <span class="hocico"></span>
+              </span>
+              <span class="brazo"></span>
+              <span class="pierna pierna-trasera"></span>
+              <span class="pierna pierna-delantera"></span>
+            </div>
+          </div>
+          <p class="descripcion-personaje">Ágil y veloz. Mira cómo se mueve.</p>
+          <button class="boton boton-elegir" type="button" data-personaje="velocirraptor" aria-pressed="false">Elegir!</button>
+        </article>
+      </div>
+      <p class="estado-eleccion" id="estado-eleccion" aria-live="polite"></p>
+      </div>
+
+          <div class="battle" id="battle-log">
+            <p id="mnsjInicial" >No hay movimiento todavia</p>
+          </div>
+
+       <footer>© Creada por Diego Hernandez</footer>
+
+        <script src="./js/animales.js"></script>
+          <script src="./js/dom.js"></script>
+       <script src="./js/logica.js"></script>
+    </body>
+</html>
