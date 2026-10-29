@@ -59,20 +59,28 @@ function crearOpcionEscenario(escenario, seleccionado) {
     return boton;
 }
 
-function mostrarSelectorEscenarios(contenedor) {
-    const titulo = document.createElement("h2");
-    titulo.className = "selector-escenarios__titulo";
-    titulo.id = "selector-escenarios-titulo";
-    titulo.textContent = "Elige un escenario";
+function mostrarSelectorEscenarios() {
+    const opciones = document.getElementById("opciones-escenario");
+    const estado = document.getElementById("estado-escenario");
+    const panelSeleccion = document.getElementById("seleccion-escenario");
+    const pantallaPartida = document.getElementById("pantalla-partida");
+    const tituloArena = document.getElementById("titulo-arena");
+    const arena = document.getElementById("arena-combate");
+    const selectorPrincipal = document.getElementById("selector-escenarios");
 
-    const opciones = document.createElement("div");
-    opciones.className = "selector-escenarios__opciones";
-    opciones.setAttribute("role", "group");
-    opciones.setAttribute("aria-labelledby", titulo.id);
+    if (
+        !opciones ||
+        !estado ||
+        !panelSeleccion ||
+        !pantallaPartida ||
+        !tituloArena ||
+        !arena ||
+        !selectorPrincipal
+    ) {
+        return;
+    }
 
-    const estado = document.createElement("p");
-    estado.className = "selector-escenarios__estado";
-    estado.setAttribute("aria-live", "polite");
+    let escenarioSeleccionado = escenarios[0];
 
     escenarios.forEach((escenario, indice) => {
         const boton = crearOpcionEscenario(escenario, indice === 0);
@@ -83,15 +91,33 @@ function mostrarSelectorEscenarios(contenedor) {
             });
 
             estado.textContent = `Escenario seleccionado: ${escenario.nombre}`;
-            contenedor.dataset.escenarioSeleccionado = escenario.id;
+            escenarioSeleccionado = escenario;
         });
 
         opciones.appendChild(boton);
     });
 
     estado.textContent = `Escenario seleccionado: ${escenarios[0].nombre}`;
-    contenedor.dataset.escenarioSeleccionado = escenarios[0].id;
-    contenedor.append(titulo, opciones, estado);
+    selectorPrincipal.dataset.escenarioSeleccionado = escenarioSeleccionado.id;
+
+    document.getElementById("boton-siguiente-escenario")?.addEventListener("click", () => {
+        selectorPrincipal.dataset.escenarioSeleccionado = escenarioSeleccionado.id;
+        arena.dataset.escenario = escenarioSeleccionado.id;
+        arena.setAttribute(
+            "aria-label",
+            `Arena de combate en el escenario ${escenarioSeleccionado.nombre.toLowerCase()}, con un león y un velocirraptor`
+        );
+        tituloArena.textContent = `Arena: ${escenarioSeleccionado.nombre}`;
+        panelSeleccion.hidden = true;
+        pantallaPartida.hidden = false;
+        document.body.classList.add("escenarios-en-juego");
+    });
+
+    document.getElementById("boton-volver-escenarios")?.addEventListener("click", () => {
+        pantallaPartida.hidden = true;
+        panelSeleccion.hidden = false;
+        document.body.classList.remove("escenarios-en-juego");
+    });
 }
 
 function selector(escenarioElegido) {
@@ -106,8 +132,4 @@ function selector(escenarioElegido) {
     }
 }
 
-const selectorPrincipal = document.getElementById("selector-escenarios");
-
-if (selectorPrincipal) {
-    mostrarSelectorEscenarios(selectorPrincipal);
-}
+mostrarSelectorEscenarios();

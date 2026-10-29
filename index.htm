@@ -98,7 +98,98 @@
             class="selector-escenarios"
             id="selector-escenarios"
             aria-label="Selecciona el escenario de la pelea"
-          ></section>
+          >
+            <div class="selector-escenarios__seleccion" id="seleccion-escenario">
+              <h2 class="selector-escenarios__titulo" id="selector-escenarios-titulo">Elige un escenario</h2>
+              <div
+                class="selector-escenarios__opciones"
+                id="opciones-escenario"
+                role="group"
+                aria-labelledby="selector-escenarios-titulo"
+              ></div>
+              <p class="selector-escenarios__estado" id="estado-escenario" aria-live="polite"></p>
+              <button class="boton" id="boton-siguiente-escenario" type="button">Siguiente</button>
+            </div>
+
+            <div class="pantalla-partida" id="pantalla-partida" hidden>
+              <div class="pantalla-partida__encabezado">
+                <h2 class="selector-escenarios__titulo" id="titulo-arena"></h2>
+                <button class="boton" id="boton-volver-escenarios" type="button">Volver a escenarios</button>
+              </div>
+
+              <div
+                class="arena-combate"
+                id="arena-combate"
+                data-escenario="desierto"
+                role="img"
+                aria-label="Arena de combate en el desierto con un león y un velocirraptor"
+              >
+                <div class="arena-cielo" aria-hidden="true">
+                  <span class="arena-sol"></span>
+                  <span class="arena-luna"></span>
+                  <span class="arena-montana arena-montana--lejana"></span>
+                  <span class="arena-montana arena-montana--cercana"></span>
+                  <div class="arena-arboles arena-arboles--fondo">
+                    <span class="arena-arbol"></span>
+                    <span class="arena-arbol"></span>
+                    <span class="arena-arbol"></span>
+                    <span class="arena-arbol"></span>
+                    <span class="arena-arbol"></span>
+                  </div>
+                  <div class="arena-arboles arena-arboles--frente">
+                    <span class="arena-arbol"></span>
+                    <span class="arena-arbol"></span>
+                    <span class="arena-arbol"></span>
+                    <span class="arena-arbol"></span>
+                  </div>
+                  <div class="arena-hierba arena-hierba--fondo">
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                  <div class="arena-suelo"></div>
+                  <div class="arena-hierba arena-hierba--frente">
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+
+                <div class="arena-luchadores" aria-hidden="true">
+                  <div class="arena-luchador arena-luchador--leon">
+                    <span class="arena-luchador__nombre">León</span>
+                    <div class="avatar-personaje avatar-leon">
+                      <span class="cola"></span>
+                      <span class="melena"></span>
+                      <span class="cuerpo"></span>
+                      <span class="cabeza">
+                        <span class="oreja"></span>
+                        <span class="ojo"></span>
+                        <span class="hocico"></span>
+                      </span>
+                      <span class="pierna pierna-trasera"></span>
+                      <span class="pierna pierna-delantera"></span>
+                    </div>
+                  </div>
+                  <div class="arena-luchador arena-luchador--raptor">
+                    <span class="arena-luchador__nombre">Velocirraptor</span>
+                    <div class="avatar-personaje avatar-raptor">
+                      <span class="cola"></span>
+                      <span class="cuerpo"></span>
+                      <span class="cabeza">
+                        <span class="ojo"></span>
+                        <span class="hocico"></span>
+                      </span>
+                      <span class="brazo"></span>
+                      <span class="pierna pierna-trasera"></span>
+                      <span class="pierna pierna-delantera"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p class="pantalla-partida__instruccion">¡Tu escenario está listo para la pelea!</p>
+            </div>
+          </section>
 
        <footer>© Creada por Diego Hernandez</footer>
 

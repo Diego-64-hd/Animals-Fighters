@@ -261,6 +261,376 @@ display: none;
   text-align: center;
 }
 
+.selector-escenarios__seleccion {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+}
+
+.selector-escenarios__seleccion[hidden] {
+  display: none;
+}
+
+.pantalla-partida[hidden] {
+  display: none;
+}
+
+.pantalla-partida {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.pantalla-partida__encabezado {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 20px;
+  width: 100%;
+}
+
+.pantalla-partida__encabezado .selector-escenarios__titulo {
+  margin: 0;
+}
+
+.pantalla-partida__instruccion {
+  margin: 0;
+  color: #ffdf83;
+  text-align: center;
+}
+
+.arena-combate {
+  position: relative;
+  width: min(1056px, calc(100vw - 32px), calc((100vh - 180px) * 1.76));
+  height: min(600px, max(320px, calc((100vw - 32px) * 0.5682)), calc(100vh - 180px));
+  overflow: hidden;
+  border: 3px solid rgb(255 207 88 / 85%);
+  border-radius: 16px;
+  background: #71c9ef;
+  box-shadow: 0 12px 36px rgb(0 0 0 / 35%), 0 0 24px rgb(255 207 88 / 18%);
+  isolation: isolate;
+}
+
+.arena-cielo {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: linear-gradient(#71c9ef 0 58%, #b4d878 58% 76%, #a87945 76%);
+}
+
+.arena-sol,
+.arena-luna {
+  position: absolute;
+  top: 9%;
+  right: 12%;
+  width: clamp(32px, 6vw, 72px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.arena-sol {
+  background: #ffe487;
+  box-shadow: 0 0 45px rgb(255 228 135 / 72%);
+}
+
+.arena-luna {
+  display: none;
+  background: #e4e9ff;
+  box-shadow: 0 0 34px rgb(209 221 255 / 75%);
+}
+
+.arena-montana {
+  position: absolute;
+  bottom: 23%;
+  width: 45%;
+  height: 50%;
+  background: #b77548;
+  clip-path: polygon(0 100%, 48% 0, 100% 100%);
+}
+
+.arena-montana--lejana {
+  left: 3%;
+  opacity: 0.72;
+}
+
+.arena-montana--cercana {
+  right: 8%;
+  width: 38%;
+  height: 38%;
+  background: #d29655;
+}
+
+.arena-arboles {
+  position: absolute;
+  right: 0;
+  left: 0;
+  display: none;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+
+.arena-arboles--fondo {
+  z-index: 1;
+  bottom: 22%;
+  height: 58%;
+  opacity: 0.75;
+}
+
+.arena-arboles--frente {
+  z-index: 3;
+  bottom: 16%;
+  height: 76%;
+}
+
+.arena-arbol {
+  position: relative;
+  width: 13%;
+  height: 84%;
+  background: #65472e;
+}
+
+.arena-arbol:nth-child(2n) {
+  height: 68%;
+}
+
+.arena-arbol:nth-child(3n) {
+  height: 96%;
+}
+
+.arena-arbol::before {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: -48%;
+  width: 196%;
+  height: 78%;
+  border-radius: 48% 48% 40% 40%;
+  background: #285d3b;
+  clip-path: polygon(50% 0, 90% 25%, 100% 62%, 78% 92%, 23% 100%, 0 61%, 12% 27%);
+  content: "";
+}
+
+.arena-arbol::after {
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+  width: 40%;
+  height: 34%;
+  background: #65472e;
+  content: "";
+}
+
+.arena-hierba {
+  position: absolute;
+  right: 0;
+  left: 0;
+  display: none;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+
+.arena-hierba--fondo {
+  z-index: 2;
+  bottom: 19%;
+  height: 25%;
+}
+
+.arena-hierba--frente {
+  z-index: 6;
+  bottom: 12%;
+  height: 28%;
+}
+
+.arena-hierba span {
+  width: 2.4%;
+  height: 70%;
+  border-radius: 100% 0;
+  background: #2f8645;
+  transform-origin: bottom center;
+  animation: hierba-mecer 2.2s ease-in-out infinite alternate;
+}
+
+.arena-hierba span:nth-child(3n) {
+  height: 100%;
+  background: #65a93c;
+  animation-delay: -0.8s;
+}
+
+.arena-hierba span:nth-child(2n) {
+  height: 82%;
+  background: #37743a;
+  animation-delay: -1.3s;
+}
+
+.arena-suelo {
+  position: absolute;
+  z-index: 3;
+  right: -4%;
+  bottom: -7%;
+  left: -4%;
+  height: 31%;
+  border-radius: 50% 50% 0 0;
+  background: #c38643;
+}
+
+.arena-luchadores {
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+}
+
+.arena-luchador {
+  position: absolute;
+  bottom: 8%;
+  left: 13%;
+  width: 28%;
+  height: 48%;
+}
+
+.arena-luchador--raptor {
+  right: 13%;
+  left: auto;
+}
+
+.arena-luchador__nombre {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 50%;
+  padding: 5px 12px;
+  border: 1px solid rgb(255 255 255 / 55%);
+  border-radius: 999px;
+  color: #fff;
+  background: rgb(16 31 79 / 78%);
+  text-shadow: 0 1px 3px #000;
+  transform: translateX(-50%);
+}
+
+.arena-luchador .avatar-personaje {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scale(1.65);
+}
+
+.arena-luchador--raptor .avatar-personaje {
+  transform: translateX(-50%) scaleX(-1) scale(1.65);
+}
+
+.arena-combate[data-escenario="selva"] .arena-cielo {
+  background: linear-gradient(#7bc6bd 0 48%, #52985a 48% 72%, #326d3d 72%);
+}
+
+.arena-combate[data-escenario="selva"] .arena-arboles,
+.arena-combate[data-escenario="selva"] .arena-hierba {
+  display: flex;
+}
+
+.arena-combate[data-escenario="selva"] .arena-arboles--frente {
+  opacity: 0.6;
+}
+
+.arena-combate[data-escenario="selva"] .arena-arbol::before {
+  left: -105%;
+  width: 310%;
+  height: 65%;
+  border-radius: 48%;
+  background: #17613e;
+  clip-path: polygon(50% 0, 66% 19%, 100% 13%, 77% 39%, 98% 56%, 68% 58%, 83% 83%, 51% 69%, 34% 100%, 37% 66%, 0 78%, 24% 53%, 2% 36%, 40% 43%);
+}
+
+.arena-combate[data-escenario="selva"] .arena-suelo {
+  background: #28643a;
+}
+
+.arena-combate[data-escenario="selva"] .arena-hierba span {
+  background: #1c683c;
+}
+
+.arena-combate[data-escenario="bosque"] .arena-cielo {
+  background: linear-gradient(#93d5d0 0 48%, #7a9c5b 48% 72%, #426d46 72%);
+}
+
+.arena-combate[data-escenario="bosque"] .arena-arboles {
+  display: flex;
+}
+
+.arena-combate[data-escenario="bosque"] .arena-arboles--fondo {
+  bottom: 19%;
+  height: 76%;
+}
+
+.arena-combate[data-escenario="bosque"] .arena-arboles--frente {
+  bottom: 12%;
+  height: 92%;
+}
+
+.arena-combate[data-escenario="bosque"] .arena-arboles--fondo .arena-arbol::before {
+  background: #648653;
+}
+
+.arena-combate[data-escenario="bosque"] .arena-arboles--frente .arena-arbol::before {
+  background: #285d3b;
+}
+
+.arena-combate[data-escenario="bosque"] .arena-suelo {
+  background: #355b39;
+}
+
+.arena-combate[data-escenario="noche"] .arena-cielo {
+  background: linear-gradient(#111c48 0 58%, #34395f 58% 76%, #222b55 76%);
+}
+
+.arena-combate[data-escenario="noche"] .arena-sol {
+  display: none;
+}
+
+.arena-combate[data-escenario="noche"] .arena-luna {
+  display: block;
+}
+
+.arena-combate[data-escenario="noche"] .arena-cielo::after {
+  position: absolute;
+  top: 12%;
+  left: 12%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #fff4bc;
+  box-shadow: 95px 55px #fff4bc, 185px 12px #fff4bc, 275px 70px #fff4bc,
+    385px 28px #fff4bc, 495px 82px #fff4bc, 605px 38px #fff4bc,
+    715px 65px #fff4bc, 825px 20px #fff4bc, 935px 76px #fff4bc;
+  content: "";
+}
+
+.arena-combate[data-escenario="noche"] .arena-arboles {
+  display: flex;
+}
+
+.arena-combate[data-escenario="noche"] .arena-arbol::before {
+  background: #202b43;
+}
+
+.arena-combate[data-escenario="noche"] .arena-arbol::after,
+.arena-combate[data-escenario="noche"] .arena-arbol {
+  background: #382f3e;
+}
+
+.arena-combate[data-escenario="noche"] .arena-montana {
+  background: #37406c;
+}
+
+.arena-combate[data-escenario="noche"] .arena-suelo {
+  background: #182044;
+}
+
+@keyframes hierba-mecer {
+  to {
+    transform: rotate(12deg);
+  }
+}
+
 .dia,
 .noche {
   min-width: 240px;
@@ -297,6 +667,32 @@ display: none;
 }
 
 @media (max-width: 640px) {
+  body.escenarios-en-juego {
+    height: auto;
+    min-height: 100vh;
+    justify-content: flex-start;
+    overflow-y: auto;
+    padding: 18px 8px;
+  }
+
+  body.escenarios-en-juego > header,
+  body.escenarios-en-juego > footer {
+    display: none;
+  }
+
+  body.escenarios-en-juego > #selector-escenarios {
+    display: grid;
+    flex-shrink: 0;
+    width: 100%;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
   .selector-escenarios {
     max-height: 40vh;
     padding: 10px;
@@ -309,6 +705,36 @@ display: none;
   .escenario-arte {
     min-height: 70px;
   }
+
+  .arena-combate {
+    width: calc(100vw - 24px);
+    height: min(420px, max(320px, calc(100vw * 0.72)), calc(100vh - 180px));
+  }
+
+  .arena-luchador {
+    bottom: 9%;
+    width: 42%;
+  }
+
+  .arena-luchador--raptor {
+    right: 2%;
+  }
+
+  .arena-luchador--leon {
+    left: 2%;
+  }
+
+  .arena-luchador .avatar-personaje {
+    transform: translateX(-50%) scale(0.8);
+  }
+
+  .arena-luchador--raptor .avatar-personaje {
+    transform: translateX(-50%) scaleX(-1) scale(0.8);
+  }
+
+  .arena-cielo::after {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -318,7 +744,36 @@ display: none;
 
   .escenario-capa--sol,
   .escenario-capa--nube,
-  .escenario-capa--estrella {
+  .escenario-capa--estrella,
+  .arena-hierba span {
     animation: none;
+  }
+}
+
+@media (min-width: 641px) {
+  body.escenarios-en-juego {
+    height: auto;
+    min-height: 100vh;
+    justify-content: flex-start;
+    overflow-y: auto;
+    padding: 18px 12px;
+  }
+
+  body.escenarios-en-juego > header,
+  body.escenarios-en-juego > footer {
+    display: none;
+  }
+
+  body.escenarios-en-juego > #selector-escenarios {
+    display: grid;
+    flex-shrink: 0;
+    width: 100%;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
   }
 }
