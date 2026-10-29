@@ -1,0 +1,7 @@
+body {
+    width: 100vh;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    background-color: rgba(0, 70, 156, 0.386);
+}

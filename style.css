@@ -207,6 +207,7 @@
 
   .seleccion-personaje {
     gap: 14px;
+    margin: 20px;
     width: min(100% - 32px, 860px);
     min-width: 80px;
     height: auto;
@@ -535,4 +536,32 @@
       animation-duration: 0.01ms;
       animation-iteration-count: 1;
     }
+  }
+
+  .dificultad {
+    background-color: rgb(128 182 255 / 24%);
+    border: 3px solid deepskyblue;
+    border-bottom: 5px solid deepskyblue;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 45%;
+    width: 30%;
+    margin: 50px;
+    padding: 15px;
+    gap: 8px;
+    box-sizing: border-box;
+  }
+
+  .dificultad h1 {
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  .dificultad-movimiento {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }

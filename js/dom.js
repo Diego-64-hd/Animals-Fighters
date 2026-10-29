@@ -5,6 +5,7 @@ const textoInicio = document.getElementById("star-1");
 const pantallaInicio = document.getElementById("battle-1");
 const pantallaModos = document.getElementById("modos");
 const pantallaPersonajes = document.getElementById("seleccionpj");
+const pantallaDificultad = document.getElementById("dificultad");
 
 function escribirTexto(texto) {
     mensajeInicial.remove();
