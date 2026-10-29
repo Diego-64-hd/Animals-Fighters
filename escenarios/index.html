@@ -9,12 +9,15 @@
 <body>
     <div>
         <h1>¿Que escenario quieres ver?</h1>
-        <button class="boton">Dia</button>
-        <button class="boton">Noche</button>
+        <button class="boton" onclick="selector(pantallaDia)">Dia</button>
+        <button class="boton" onclick="selector(pantallaNoche)">Noche</button>
     </div>
 
-    <div style="display: none;" class="dia"></div>
-    <div style="display: none;" class="noche"></div>
+    <div style="display: none;" id="dia" class="dia">
+        <div class="tierra"></div>
+    </div>
+    <div style="display: none;" id="noche" class="noche"></div>
+
     <script src="script.js"></script>
 </body>
 </html>

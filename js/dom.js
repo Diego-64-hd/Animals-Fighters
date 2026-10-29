@@ -6,6 +6,7 @@ const pantallaInicio = document.getElementById("battle-1");
 const pantallaModos = document.getElementById("modos");
 const pantallaPersonajes = document.getElementById("seleccionpj");
 const pantallaDificultad = document.getElementById("dificultad");
+const pantallaEscenario = document.getElementById("selector-escenarios");
 
 function escribirTexto(texto) {
     mensajeInicial.remove();
@@ -16,7 +17,7 @@ function escribirTexto(texto) {
 
 let cargando = false;
 
-function mostrarPantalla(destino) {
+function mostrarPantalla(destino, tipodsp) {
   if (cargando) return;
   cargando = true;
   botonInicio.disabled = true;
@@ -31,7 +32,13 @@ function mostrarPantalla(destino) {
       pantallaInicio.style.display = "none";
       pantallaModos.style.display = "none";
       pantallaPersonajes.style.display = "none";
-      destino.style.display = "flex";
+      pantallaDificultad.style.display = "none";
+      pantallaEscenario.style.display = "none";
+      if (destino === pantallaEscenario) {
+        destino.style.display = "grid";
+      } else {
+        destino.style.display = "flex";
+      }
       textoInicio.textContent = "Or press Enter key to start";
       botonInicio.disabled = false;
       cargando = false;

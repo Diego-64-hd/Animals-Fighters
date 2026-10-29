@@ -7,6 +7,7 @@
     <meta name="author" content="Diego Hernandez">
     <title>Pelea de animales</title>
          <link rel="stylesheet" href="style.css">
+         <link rel="stylesheet" href="./escenarios/style.css">
        <link rel="shortcut icon" href="primer-icono.png" type="image/x-icon">
       <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,7 +86,7 @@
          <button class="boton">Estrella ⭐️</button>
          <div class="dificultad-movimiento">
             <button class="boton"><- Volver</button>
-            <button class="boton">Siguiente -></button>
+            <button class="boton" onclick="mostrarPantalla(pantallaEscenario)">Siguiente -></button>
          </div>
       </div>
 
@@ -93,10 +94,17 @@
             <p id="mnsjInicial" >No hay movimiento todavia</p>
           </div>
 
+          <section
+            class="selector-escenarios"
+            id="selector-escenarios"
+            aria-label="Selecciona el escenario de la pelea"
+          ></section>
+
        <footer>© Creada por Diego Hernandez</footer>
 
         <script src="./js/animales.js"></script>
           <script src="./js/dom.js"></script>
        <script src="./js/logica.js"></script>
+       <script src="./escenarios/script.js"></script>
     </body>
 </html>
