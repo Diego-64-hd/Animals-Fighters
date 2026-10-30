@@ -27,7 +27,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
   }
 
   body::before {
@@ -213,7 +214,8 @@
     height: auto;
     max-height: calc(100vh - 160px);
     padding: 20px;
-    border: 2px solid rgb(98 214 255 / 48%);
+    border: 3px solid deepskyblue;
+    border-bottom: 5px solid deepskyblue;
     border-radius: 18px;
     background: rgb(8 20 61 / 78%);
     box-shadow: 0 0 24px rgb(0 180 255 / 22%);
@@ -256,7 +258,8 @@
     min-width: 80px;
     height: 140px;
     overflow: hidden;
-    border: 1px solid rgb(128 182 255 / 24%);
+   border: 3px solid deepskyblue;
+    border-bottom: 5px solid deepskyblue;
     border-radius: 10px;
     background: linear-gradient(#1b2b50 0 76%, #27345a 76%);
   }
@@ -539,7 +542,7 @@
   }
 
   .dificultad {
-    background-color: rgb(128 182 255 / 24%);
+    background-color: rgb(8 20 68  / 78%);
     border: 3px solid deepskyblue;
     border-bottom: 5px solid deepskyblue;
     border-radius: 15px;
@@ -549,7 +552,7 @@
     flex-direction: column;
     height: 45%;
     width: 30%;
-    margin: 50px;
+    margin-top: 50px;
     padding: 15px;
     gap: 8px;
     box-sizing: border-box;
@@ -560,7 +563,7 @@
     font-size: 1.5rem;
   }
 
-  .dificultad-movimiento {
+  .movimiento {
     display: flex;
     justify-content: space-between;
     width: 100%;

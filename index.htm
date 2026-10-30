@@ -13,7 +13,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
-  <header>
+  <header id="header">
     <img src="assets/segundo-icono.png" class="icono">
         <h1 class="titulo">ANIMALS FIGHT</h1>
         </header>
@@ -75,17 +75,20 @@
         </article>
       </div>
       <p class="estado-eleccion" id="estado-eleccion" aria-live="polite"></p>
-      <button class="boton" onclick="mostrarPantalla(dificultad)">Siguiente -></button>
+           <div class="movimiento">
+              <button class="boton" onclick="mostrarPantalla(pantallaModos)"><- Volver</button>
+              <button class="boton" onclick="mostrarPantalla(pantallaDificultad)">Siguiente -></button>
+         </div>
       </div>
 
       <div class="dificultad" id="dificultad" style="display: none;">
         <h1>elije tu dificultad</h1>
-         <button class="boton">Facil</button>
-         <button class="boton">Normal</button>
-         <button class="boton">Dificil</button>
-         <button class="boton">Estrella ⭐️</button>
-         <div class="dificultad-movimiento">
-            <button class="boton"><- Volver</button>
+         <button class="boton boton-elegir" aria-pressed="false">Facil</button>
+         <button class="boton boton-elegir" aria-pressed="false">Normal</button>
+         <button class="boton boton-elegir" aria-pressed="false">Dificil</button>
+         <button class="boton boton-elegir" aria-pressed="false">Estrella ⭐️</button>
+         <div class="movimiento">
+            <button class="boton" onclick="mostrarPantalla(pantallaPersonajes)"><- Volver</button>
             <button class="boton" onclick="mostrarPantalla(pantallaEscenario)">Siguiente -></button>
          </div>
       </div>
@@ -191,7 +194,7 @@
             </div>
           </section>
 
-       <footer>© Creada por Diego Hernandez</footer>
+       <footer id="foot">© Creada por Diego Hernandez</footer>
 
         <script src="./js/animales.js"></script>
           <script src="./js/dom.js"></script>

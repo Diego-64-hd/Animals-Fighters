@@ -7,6 +7,8 @@ const pantallaModos = document.getElementById("modos");
 const pantallaPersonajes = document.getElementById("seleccionpj");
 const pantallaDificultad = document.getElementById("dificultad");
 const pantallaEscenario = document.getElementById("selector-escenarios");
+const pieDePagina = document.getElementById("foot");
+const encabezado = document.getElementById("header");
 
 function escribirTexto(texto) {
     mensajeInicial.remove();
@@ -71,7 +73,14 @@ document.querySelectorAll(".boton-elegir").forEach((boton) => {
   });
 });
 
+// Obtencion de las coordenadas del cursor
 document.addEventListener("pointermove", (event) => {
   document.body.style.setProperty("--cursor-x", `${event.clientX}px`);
   document.body.style.setProperty("--cursor-y", `${event.clientY}px`);
 });
+
+// Partes de la pagina esenciales por eso se bloquean
+if (pieDePagina.style.display === "none" || encabezado.style.display === "none") {
+  pieDePagina.style.display === "none"; 
+  encabezado.style.display === "none";
+}
